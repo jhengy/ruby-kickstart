@@ -5,4 +5,12 @@
 # pirates_say_arrrrrrrrr("Pirates say arrrrrrrrr")        # => "arrrrrrrr"
 
 def pirates_say_arrrrrrrrr(string)
+  out = ""
+  return out if string.empty?
+  
+  string.size.times do |i|
+    out << string[i + 1] if string[i].downcase == "r" && i != (string.size - 1)
+  end
+
+  return out
 end
