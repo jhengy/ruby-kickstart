@@ -77,7 +77,7 @@ class Person
   end
 end 
 
-  # whatever the block returns will be used to sort the object
+# whatever the block returns will be used to sort the object
 people = [
   Person.new( 'Ernie'    , 20 ),
   Person.new( 'Sara'     , 50 ),
@@ -90,7 +90,7 @@ people.sort_by { |person| person.age } # => [<Monique(10)>, <Ernie(20)>, <Sara(5
 
 # =====  Adding / removing / replacing / finding elements  =====
 
-  # appending / pushing / popping  (never have to write a stack again)
+# appending / pushing / popping  (never have to write a stack again)
 ary = [1,2,3]
 ary << 4
 ary             # => [1, 2, 3, 4]
@@ -99,15 +99,15 @@ ary             # => [1, 2, 3, 4, 5]
 ary.pop         # => 5
 ary             # => [1, 2, 3, 4]
 
-  # if you want to push / pop from the beginning, it's called unshifting and shifting 
-  # to help you remember which is which, it might help to associate shift with the assembly command shl
+# if you want to push / pop from the beginning, it's called unshifting and shifting 
+# to help you remember which is which, it might help to associate shift with the assembly command shl
 ary = [1,2,3]
 ary.unshift 0
 ary             # => [0, 1, 2, 3]
 ary.shift       # => 0
 ary             # => [1, 2, 3]
 
-  # removing items
+# removing items
 ary = Array(1..10)             # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ary.delete 5
 ary                            # => [1, 2, 3, 4, 6, 7, 8, 9, 10]
@@ -116,7 +116,7 @@ ary = Array(1..10)             # => [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 ary.reject { |i| i % 2 == 0 }  # => [1, 3, 5, 7, 9]
 ary.select { |i| i % 2 == 0 }  # => [2, 4, 6, 8, 10]
 
-  # checking for an object
+# checking for an object
 ary = Array(3..10)    # => [3, 4, 5, 6, 7, 8, 9, 10]
 ary.include?(5)       # => true
 ary.index(5)          # => 2
@@ -211,3 +211,8 @@ def sum( x , y , z )
 end
 a = [1,2,3]
 sum(*a)                         # => 6
+
+# freeze to prevent further modification
+a = [ 1 , 2 , 3 ]
+a.freeze
+a << "z"
